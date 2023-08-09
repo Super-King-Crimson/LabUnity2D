@@ -1,10 +1,9 @@
 {
     "name": "Tests",
-    "rootNamespace": "",
+    "rootNamespace": "Lab.Tests",
     "references": [
         "UnityEngine.TestRunner",
-        "UnityEditor.TestRunner",
-        "Main"
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
