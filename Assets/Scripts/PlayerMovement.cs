@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    readonly float SPEED = 1;
+
     float Lerp(float a, float b, float t)
     {
         return a + t * (b - a);
@@ -18,6 +20,15 @@ public class PlayerMovement : MonoBehaviour
         );
     }
 
+    float LerpC(float a, float b, float c, float d, float t)
+    {
+        return Lerp(
+            LerpQ(a, b, c, t),
+            LerpQ(b, c, d, t),
+            t            
+        );
+    }
+
     float LerpN(float a, float b, float t, float n)
     {
         float newA = b - ((b - a) * Mathf.Pow(1 - t, n - 1));
@@ -27,11 +38,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
     void Update()
     {
-        
+        (float inputX, float inputY) = (Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        gameObject.transform.position += new Vector3(
+            inputX * SPEED * Time.deltaTime, 
+            inputY * SPEED * Time.deltaTime, 
+            0
+        );
     }
 }
