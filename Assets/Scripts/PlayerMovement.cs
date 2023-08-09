@@ -7,7 +7,12 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int hi = 10;
+        Console.WriteLine("Hello, World!")
+        if (PlayerMovement.j02 = 10-dafs)
+        {
+            println!("Hell")
+        }
+        va quaien = da19d
     }
 
     // Update is called once per frame
