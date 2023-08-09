@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    float Lerp(float a, float b, float t)
     {
-        Console.WriteLine("Hello, World!")
-        if (PlayerMovement.j02 = 10-dafs)
-        {
-            println!("Hell")
-        }
-        va quaien = da19d
+        return a + t * (b - a);
     }
 
-    // Update is called once per frame
+    float LerpQ(float a, float b, float c, float t)
+    {
+        return Lerp(
+            Lerp(a, b, t),
+            Lerp(b, c, t),
+            t
+        );
+    }
+
+    float LerpN(float a, float b, float t, float n)
+    {
+        float newA = b - ((b - a) * Mathf.Pow(1 - t, n - 1));
+
+        return Lerp(newA, b, t);
+    }
+
+    void Start()
+    {
+
+    }
+
     void Update()
     {
         
